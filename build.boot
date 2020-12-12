@@ -1,6 +1,8 @@
-(defn get-deps    []     (-> "./dependencies.edn" slurp read-string))
+(defn get-deps [file] (-> file slurp read-string))
 
-(set-env! :resource-paths #{"src"} :dependencies (get-deps))
+(set-env!
+  :resource-paths #{"src"}
+  :dependencies (get-deps "./dependencies.edn"))
 
 (require
  '[degree9.boot-semver :refer :all])

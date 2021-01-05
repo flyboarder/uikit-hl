@@ -60,7 +60,7 @@
   [elem kw v]
   (elem :class {:uk-textarea v}))
 
-(h/defelem textarea [attr kids]
+(h/defelem textarea [{:keys [blank success danger] :as attr} kids]
   (h/textarea
     (dissoc attr :blank :success :danger)
     ::textarea true

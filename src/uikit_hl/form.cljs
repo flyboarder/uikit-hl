@@ -62,8 +62,11 @@
 
 (h/defelem textarea [attr kids]
   (h/textarea
-    attr
+    (dissoc attr :blank :success :danger)
     ::textarea true
+    ::blank   blank
+    ::success success
+    ::danger  danger
     kids))
 
 (defmethod uk-form! ::fieldset
@@ -126,11 +129,13 @@
   [elem kw v]
   (elem :class {:uk-select v}))
 
-(h/defelem select [{:keys [blank] :as attr} kids]
+(h/defelem select [{:keys [blank success danger] :as attr} kids]
   (h/select
-    attr
-    ::select true
-    ::blank blank
+    (dissoc attr :blank :success :danger)
+    ::select  true
+    ::blank   blank
+    ::success success
+    ::danger  danger
     kids))
 
 (def option h/option)

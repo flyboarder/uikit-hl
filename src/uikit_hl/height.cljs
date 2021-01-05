@@ -15,7 +15,7 @@
 
 (defmethod uk-height! ::default
   [elem kw v]
-  (elem :class {(format-height (name kw)) v}))
+  (h/do! elem :class {(format-height (name kw)) v}))
 
 (defmethod uk-height! ::height-1-1
   [elem _ v]

@@ -3,6 +3,9 @@
             [hoplon.jquery]
             [uikit-hl.core :as uk]))
 
+(defn show [slider idx]
+  (.show slider idx))
+
 (defmulti uk-slider! h/kw-dispatcher :default ::default)
 
 (defmethod h/do! ::default

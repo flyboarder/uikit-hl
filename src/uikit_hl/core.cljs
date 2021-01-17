@@ -56,6 +56,9 @@
 (defn sortable [elem & [opts]]
   (.sortable uikit elem (clj->js opts)))
 
+(defn sticky [elem & [opts]]
+  (.sticky uikit elem (clj->js opts)))
+
 (defn tab [elem & [opts]]
   (.tab uikit elem (clj->js opts)))
 
